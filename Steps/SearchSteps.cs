@@ -24,7 +24,7 @@ namespace SpecFlowDiia.Steps
         [Given(@"Main page is open")]
         public void GivenMainPageIsOpen()
         {
-            _mainPage.GoToUrl();
+            _mainPage.GoToMainPage();
         }
 
         [When(@"I input '(.*)' in the search field")]
