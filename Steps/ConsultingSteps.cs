@@ -3,6 +3,7 @@ using TechTalk.SpecFlow;
 using OpenQA.Selenium;
 using NUnit.Framework;
 using SpecFlowDiia.POM;
+using System.Threading;
 
 namespace SpecFlowDiia.Steps
 {
@@ -37,5 +38,20 @@ namespace SpecFlowDiia.Steps
         {
             Assert.IsTrue(_consultingPage.CheckIfAccordionElementsOpen());
         }
+
+        [When(@"I click on tag (.*)")]
+        public void WhenIClickOnTag(string tagTitle)
+        {
+            _scenarioContext["TagTitle"] = tagTitle;
+            _consultingPage.ClickTagByText(tagTitle);
+        }
+
+        [Then(@"I get to page (.*) corresponding to this tag")]
+        public void ThenIGetToPageCorrespondingToThisTag(string url)
+        {
+            _consultingPage.WaitUntilTagPageLoad(_scenarioContext["TagTitle"].ToString());
+            Assert.AreEqual("https://business.diia.gov.ua/" + url, _webDriver.Url);
+        }
+
     }
 }

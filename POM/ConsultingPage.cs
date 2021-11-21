@@ -29,6 +29,9 @@ namespace SpecFlowDiia.POM
 
         private readonly By _accordionItems = By.XPath("//div[@class=\"common-accordion__items\"]/div");
         private readonly By _accordionBlock = By.CssSelector("h2[class=\"title faq-list-static__title h2\"]");
+        private readonly By _tagsBlock = By.CssSelector("div[class=\"consulting-list__categories\"]");
+        private readonly By _tagsTextSpan = By.XPath("//span[@class=\"tag__icon tag__icon_left dots-icon dots-icon_reversed\"]/following-sibling::span[1]");
+        private readonly By _tagTextOnNewPage = By.XPath("(//div[@class=\"large-content-card-category\"]//span[contains(text(), 'Фінанси')])[1]");
 
         public ConsultingPage GoToUrl()
         {
@@ -56,6 +59,37 @@ namespace SpecFlowDiia.POM
                 i++;
             }
             return true;
+        }
+
+        public ConsultingPage ClickTagByText(string tagNameToClick)
+        {
+            _wait.Until(ExpectedConditions.ElementExists(By.XPath(String.Format($"//span[contains(text(), '{tagNameToClick}')]"))));
+            var tagsCloud = _webDriver.FindElement(_tagsBlock);
+            _action.MoveToElement(tagsCloud).Perform();
+
+            
+            var tagElement = _webDriver.FindElement(By.XPath(String.Format($"//span[contains(text(), '{tagNameToClick}')]//ancestor::button")));
+            _action.MoveToElement(tagElement).Perform();
+            tagElement.Click();
+
+            //List<IWebElement> listOfAllTags = _webDriver.FindElements(_tagsTextSpan).ToList();
+
+            //foreach (var tag in listOfAllTags)
+            //{
+            //    if (tag.Text.Trim() == tagNameToClick)
+            //    {
+            //        tag.Click();
+            //        break;
+            //    }
+            //}
+            return this;
+        }
+
+        public ConsultingPage WaitUntilTagPageLoad(string tagNameToClick)
+        {
+            _wait.Until(ExpectedConditions.ElementExists(By.XPath($"(//div[@class=\"large-content-card-category\"]//span[contains(text(), '{tagNameToClick}')])[1]")));
+            _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath($"(//div[@class=\"large-content-card-category\"]//span[contains(text(), '{tagNameToClick}')])[1]")));
+            return this;
         }
     }
 }
