@@ -3,7 +3,6 @@ using TechTalk.SpecFlow;
 using OpenQA.Selenium;
 using NUnit.Framework;
 using SpecFlowDiia.POM;
-using System.Threading;
 
 namespace SpecFlowDiia.Steps
 {
@@ -52,6 +51,5 @@ namespace SpecFlowDiia.Steps
             _consultingPage.WaitUntilTagPageLoad(_scenarioContext["TagTitle"].ToString());
             Assert.AreEqual("https://business.diia.gov.ua/" + url, _webDriver.Url);
         }
-
     }
 }

@@ -77,6 +77,12 @@ namespace SpecFlowDiia.Features.Consulting
         [NUnit.Framework.DescriptionAttribute("Click on tag opens corresponding page")]
         [NUnit.Framework.TestCaseAttribute("Знайомство", "consulting/znajomstvo", null)]
         [NUnit.Framework.TestCaseAttribute("Систематизація бізнес-процесів", "consulting/business-processes", null)]
+        [NUnit.Framework.TestCaseAttribute("Фінанси", "consulting/finances", null)]
+        [NUnit.Framework.TestCaseAttribute("Юридична підтримка", "consulting/legal-support", null)]
+        [NUnit.Framework.TestCaseAttribute("Маркетинг", "consulting/marketing", null)]
+        [NUnit.Framework.TestCaseAttribute("Продажі", "consulting/sales", null)]
+        [NUnit.Framework.TestCaseAttribute("Масштабування", "consulting/scale", null)]
+        [NUnit.Framework.TestCaseAttribute("HR", "consulting/hr", null)]
         public virtual void ClickOnTagOpensCorrespondingPage(string categoryTag, string categoryPage, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;

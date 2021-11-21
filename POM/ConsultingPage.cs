@@ -1,16 +1,10 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using TechTalk.SpecFlow;
-using WebDriverManager;
-using WebDriverManager.DriverConfigs.Impl;
-using WebDriverManager.Helpers;
 
 namespace SpecFlowDiia.POM
 {
@@ -30,8 +24,6 @@ namespace SpecFlowDiia.POM
         private readonly By _accordionItems = By.XPath("//div[@class=\"common-accordion__items\"]/div");
         private readonly By _accordionBlock = By.CssSelector("h2[class=\"title faq-list-static__title h2\"]");
         private readonly By _tagsBlock = By.CssSelector("div[class=\"consulting-list__categories\"]");
-        private readonly By _tagsTextSpan = By.XPath("//span[@class=\"tag__icon tag__icon_left dots-icon dots-icon_reversed\"]/following-sibling::span[1]");
-        private readonly By _tagTextOnNewPage = By.XPath("(//div[@class=\"large-content-card-category\"]//span[contains(text(), 'Фінанси')])[1]");
 
         public ConsultingPage GoToUrl()
         {
@@ -66,22 +58,11 @@ namespace SpecFlowDiia.POM
             _wait.Until(ExpectedConditions.ElementExists(By.XPath(String.Format($"//span[contains(text(), '{tagNameToClick}')]"))));
             var tagsCloud = _webDriver.FindElement(_tagsBlock);
             _action.MoveToElement(tagsCloud).Perform();
-
             
             var tagElement = _webDriver.FindElement(By.XPath(String.Format($"//span[contains(text(), '{tagNameToClick}')]//ancestor::button")));
             _action.MoveToElement(tagElement).Perform();
+            _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(String.Format($"//span[contains(text(), '{tagNameToClick}')]//ancestor::button"))));
             tagElement.Click();
-
-            //List<IWebElement> listOfAllTags = _webDriver.FindElements(_tagsTextSpan).ToList();
-
-            //foreach (var tag in listOfAllTags)
-            //{
-            //    if (tag.Text.Trim() == tagNameToClick)
-            //    {
-            //        tag.Click();
-            //        break;
-            //    }
-            //}
             return this;
         }
 
