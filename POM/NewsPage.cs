@@ -24,13 +24,13 @@ namespace SpecFlowDiia.POM
 
         private readonly By _cookieClose = By.CssSelector("[class = 'cookies-1_close']");
         private readonly By _clickMoreNewsButton = By.CssSelector("[class='btn btn_more-news']");
-        private readonly By _firstBlockNews = By.CssSelector("[class='posts_item-title'][1]");
+        private readonly By _firstBlockNews = By.CssSelector("[class='posts_item-title']");
         private readonly By _pageTitleText = By.CssSelector("[class='page_title-text']");
-        private readonly By _navigation = By.CssSelector("[class='pagination']");
+        private readonly By _navigation = By.XPath(".//*[@id='post-navigation']/ul/li[3]/span");
         private readonly By _paginationNum2 = By.CssSelector("[href='https://diia.gov.ua/news?page=2']");
         private readonly By _countNewsBlock = By.CssSelector("[class='posts_item']");
-        private readonly By _firstNewsBlockTitle = By.CssSelector("[class='posts_item-title'][1]");
-        private readonly By _activePaginationElement = By.CssSelector("[class='active']");
+        private readonly By _firstNewsBlockTitle = By.CssSelector("[class='posts_item-title']");
+        private readonly By _activePaginationElement = By.XPath("//*//*[@id='post-navigation']/ul/li[3]/span");
         private readonly By _clikNextPageButton = By.CssSelector("[id='post-navigation'] [rel='next']");
         private readonly By _clikPreviousPageButton = By.XPath("//*[@id='post-navigation']/ul/li[1]/a");
         private readonly By _paginationNextButton = By.XPath(".//*[@id='post-navigation']/ul/li[3]/span");
@@ -59,7 +59,7 @@ namespace SpecFlowDiia.POM
         public NewsPage СlickOnFirstBlockNews()
         {
             _webDriver
-                .FindElement(_firstBlockNews)
+                .FindElements(_firstBlockNews)[0]
                 .Click();
             return this;
         }
@@ -79,13 +79,13 @@ namespace SpecFlowDiia.POM
             return this;
         }
 
-        public int numOfSecondNewsPageBlock = 12;
-        public NewsPage CountNewsBlock(int numOfSecondNewsPageBlock)
+        public bool CountNewsBlock()
         {
-            _webDriver
-                .FindElements(_countNewsBlock)
-                .Count();
-            return this;
+            if (_webDriver.FindElements(_countNewsBlock).Count() == 12)
+            {
+                return true;
+            }
+            return false;
         }
 
         public string ActivePaginationElement()

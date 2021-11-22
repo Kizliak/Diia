@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using SpecFlowDiia.POM;
 using System;
 using TechTalk.SpecFlow;
@@ -62,9 +63,9 @@ namespace SpecFlowDiia.Steps
         }
         
         [Then(@"Сount with news blocks in the page is (.*)")]
-        public void ThenСountWithNewsBlocksInThePageIs(int numOfSecondNewsPageBlock)
+        public void ThenСountWithNewsBlocksInThePageIs()
         {
-            _newsPage.CountNewsBlock(numOfSecondNewsPageBlock);
+            Assert.IsTrue(_newsPage.CountNewsBlock());
         }
         
         [Then(@"I see second page number navigation")]

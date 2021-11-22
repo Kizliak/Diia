@@ -79,7 +79,7 @@ namespace SpecFlowDiia.Features.MainPage
 #line 6
 #line hidden
 #line 7
- testRunner.Given("Main Page is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("Main page is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
         }
         

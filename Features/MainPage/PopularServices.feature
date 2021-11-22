@@ -4,7 +4,7 @@
 	In order to get access faster
 
 Background: 
-	Given Main Page is open
+	Given Main page is open
 
 @Click
 Scenario: Check navigation to service page from the block of popular services 

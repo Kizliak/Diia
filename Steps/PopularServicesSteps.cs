@@ -24,11 +24,6 @@ namespace SpecFlowDiia.Steps
             _popularServicePage = new PopularServicePage(_webDriver);
         }
 
-        [Given(@"Main Page is open")]
-        public void GivenMainPageIsOpen()
-        {
-            _popularServicePage.GoMainPage();
-        }
 
         [When(@"I click on the first service")]
         public void WhenIClickOnTheFirstService()

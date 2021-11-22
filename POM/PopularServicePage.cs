@@ -39,11 +39,11 @@ namespace SpecFlowDiia.POM
         //ul[@class="nav nav-tabs tabs_services"]/../div/div/div/div/div[@class="swiper-wrapper swiper_services-wrapper"]
         private readonly By _popularServiceHeader = By.XPath("/html/body/div[1]/main/section[1]/div[1]/div/div[3]/div[1]");
 
-        public PopularServicePage GoMainPage()
-        {
-            _webDriver.Navigate().GoToUrl("https://diia.gov.ua/");
-            return this;
-        }
+        //public PopularServicePage GoMainPage()
+        //{
+        //    _webDriver.Navigate().GoToUrl("https://diia.gov.ua/");
+        //    return this;
+        //}
         public bool CheckTextOfFirstPopularLink(string textOfPopularService)
         {
             if (_webDriver.FindElement(_popularServiceHeader).Text.Contains(textOfPopularService))
