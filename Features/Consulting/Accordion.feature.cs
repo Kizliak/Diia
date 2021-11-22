@@ -35,7 +35,8 @@ namespace SpecFlowDiia.Features.Consulting
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/Consulting", "Accordion", "\tFAQ as a list of accordion items", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/Consulting", "Accordion", "\tAs a user\r\n\tI want to click accordion items\r\n\tIn order to read answer for my que" +
+                    "stion", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -75,9 +76,9 @@ namespace SpecFlowDiia.Features.Consulting
         
         public virtual void FeatureBackground()
         {
-#line 4
+#line 6
 #line hidden
-#line 5
+#line 7
  testRunner.Given("Consulting page is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
         }
@@ -91,7 +92,7 @@ namespace SpecFlowDiia.Features.Consulting
                     "accordion"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Click on accordion item", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 8
+#line 10
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -111,13 +112,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 4
+#line 6
 this.FeatureBackground();
 #line hidden
-#line 9
+#line 11
  testRunner.When("I click on question from accordion list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 10
+#line 12
  testRunner.Then("Text block with answer to question open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

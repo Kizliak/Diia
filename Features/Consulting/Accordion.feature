@@ -1,5 +1,7 @@
 ﻿Feature: Accordion
-	FAQ as a list of accordion items
+	As a user
+	I want to click accordion items
+	In order to read answer for my question
 
 Background: 
 	Given Consulting page is open

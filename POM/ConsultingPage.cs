@@ -24,6 +24,8 @@ namespace SpecFlowDiia.POM
         private readonly By _accordionItems = By.XPath("//div[@class=\"common-accordion__items\"]/div");
         private readonly By _accordionBlock = By.CssSelector("h2[class=\"title faq-list-static__title h2\"]");
         private readonly By _tagsBlock = By.CssSelector("div[class=\"consulting-list__categories\"]");
+        private readonly By _orderConsultationButton = By.XPath("//div[@class=\"consulting-list__card\"][1]//button[@class=\"button button_type_main\"]");
+        private readonly By _authorizePopup = By.CssSelector("div[class=\"modal-first-consultation__content\"]");
 
         public ConsultingPage GoToUrl()
         {
@@ -71,6 +73,28 @@ namespace SpecFlowDiia.POM
             _wait.Until(ExpectedConditions.ElementExists(By.XPath($"(//div[@class=\"large-content-card-category\"]//span[contains(text(), '{tagNameToClick}')])[1]")));
             _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath($"(//div[@class=\"large-content-card-category\"]//span[contains(text(), '{tagNameToClick}')])[1]")));
             return this;
+        }
+
+        public ConsultingPage ScrollToConsultationsBlock()
+        {
+            var accordionBlock = _webDriver.FindElement(_accordionBlock);
+            _action.MoveToElement(accordionBlock).Perform();
+
+            _action.MoveToElement(_webDriver.FindElement(_orderConsultationButton)).Perform();
+            return this;
+        }
+
+        public ConsultingPage ClickOrderButton()
+        {
+            var button = _wait.Until(ExpectedConditions.ElementToBeClickable(_orderConsultationButton));
+            button.Click();
+            return this;
+        }
+
+        public bool CheckIfAuthorizePopupIsVisible()
+        {
+            _wait.Until(ExpectedConditions.ElementIsVisible(_authorizePopup));
+            return true;
         }
     }
 }

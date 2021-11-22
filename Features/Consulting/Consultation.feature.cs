@@ -20,23 +20,23 @@ namespace SpecFlowDiia.Features.Consulting
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("CategoryTags")]
-    public partial class CategoryTagsFeature
+    [NUnit.Framework.DescriptionAttribute("OrderConsultation")]
+    public partial class OrderConsultationFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "Tags.feature"
+#line 1 "Consultation.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/Consulting", "CategoryTags", "\tAs a user\r\n\tI want to see cloud of category tags\r\n\tIn order to get fast access t" +
-                    "o connected pages", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/Consulting", "OrderConsultation", "\tAs a user\r\n\tI want to see Order button in consultation block\r\n\tIn order to sign " +
+                    "up for chosen consultation", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -75,23 +75,15 @@ namespace SpecFlowDiia.Features.Consulting
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Click on tag opens corresponding page")]
-        [NUnit.Framework.TestCaseAttribute("Знайомство", "consulting/znajomstvo", null)]
-        [NUnit.Framework.TestCaseAttribute("Систематизація бізнес-процесів", "consulting/business-processes", null)]
-        [NUnit.Framework.TestCaseAttribute("Фінанси", "consulting/finances", null)]
-        [NUnit.Framework.TestCaseAttribute("Юридична підтримка", "consulting/legal-support", null)]
-        [NUnit.Framework.TestCaseAttribute("Маркетинг", "consulting/marketing", null)]
-        [NUnit.Framework.TestCaseAttribute("Продажі", "consulting/sales", null)]
-        [NUnit.Framework.TestCaseAttribute("Масштабування", "consulting/scale", null)]
-        [NUnit.Framework.TestCaseAttribute("HR", "consulting/hr", null)]
-        public virtual void ClickOnTagOpensCorrespondingPage(string categoryTag, string categoryPage, string[] exampleTags)
+        [NUnit.Framework.DescriptionAttribute("Need to authorize before order consultation")]
+        [NUnit.Framework.CategoryAttribute("popup")]
+        public virtual void NeedToAuthorizeBeforeOrderConsultation()
         {
-            string[] tagsOfScenario = exampleTags;
+            string[] tagsOfScenario = new string[] {
+                    "popup"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("categoryTag", categoryTag);
-            argumentsOfScenario.Add("categoryPage", categoryPage);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Click on tag opens corresponding page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 6
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Need to authorize before order consultation", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -111,14 +103,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
+#line 8
  testRunner.Given("Consulting page is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 8
- testRunner.When(string.Format("I click on tag {0}", categoryTag), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 9
- testRunner.Then(string.Format("I get to page {0} corresponding to this tag", categoryPage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I click Order button in consultations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 10
+ testRunner.Then("Authorize notification opens in pop-up window", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

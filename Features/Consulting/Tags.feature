@@ -1,5 +1,7 @@
 ﻿Feature: CategoryTags
-	Cloud of category tags with links to corresponding pages
+	As a user
+	I want to see cloud of category tags
+	In order to get fast access to connected pages
 
 Scenario Outline: Click on tag opens corresponding page
 	Given Consulting page is open

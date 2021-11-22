@@ -51,5 +51,19 @@ namespace SpecFlowDiia.Steps
             _consultingPage.WaitUntilTagPageLoad(_scenarioContext["TagTitle"].ToString());
             Assert.AreEqual("https://business.diia.gov.ua/" + url, _webDriver.Url);
         }
+
+        [When(@"I click Order button in consultations list")]
+        public void WhenIClickOrderButtonInConsultationsList()
+        {
+            _consultingPage.ScrollToConsultationsBlock()
+                .ClickOrderButton();
+        }
+
+        [Then(@"Authorize notification opens in pop-up window")]
+        public void ThenAuthorizeNotificationOpensInPop_UpWindow()
+        {
+            Assert.IsTrue(_consultingPage.CheckIfAuthorizePopupIsVisible());
+        }
+
     }
 }
