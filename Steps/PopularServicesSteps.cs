@@ -28,14 +28,14 @@ namespace SpecFlowDiia.Steps
         [Given(@"Main page is open")]
         public void GivenMainPageIsOpen()
         {
-            //_mainPage.GoToUrl();
+            _popularServicePage.GoMainPage();
         }
 
         [When(@"I click on the first service")]
         public void WhenIClickOnTheFirstService()
         {
             //popularLinkText = _mainPage.ClickPopulalServiceLink();
-            _scenarioContext["popularLinkText"] = _mainPage.ClickPopulalServiceLink();
+            _scenarioContext["popularLinkText"] = _popularServicePage.ClickPopulalServiceLink();
         }
 
         [Then(@"I navigate to the service page")]

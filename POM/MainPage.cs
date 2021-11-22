@@ -32,12 +32,7 @@ namespace SpecFlowDiia.POM
         private readonly By _serchTitleText = By.CssSelector("[class='search_request-text']");
         private readonly By _cookieClose = By.CssSelector("[class='cookies-1_close']");
 
-        //PopularServiceLinks
-        private readonly By _popularServiceLinks = By.XPath("(//ul[@class=\"nav nav - tabs tabs_services\"]/../div/div[1]//div[@class=\"swiper - wrapper swiper_services - wrapper\"]/div/div/div/a[@class=\"swiper_services - slide - title\"])[position() = 1]");
-
-        //div[@class="swiper_services-top"]/../div[2]/div/div/div/a[@class="swiper_services-slide-title"]
-        //ul[@class="nav nav-tabs tabs_services"]/../div/div/div/div/div[@class="swiper-wrapper swiper_services-wrapper"]
-
+        
         public MainPage GoToMainPage()
         {
             _webDriver.Navigate().GoToUrl("https://diia.gov.ua/");
@@ -65,12 +60,5 @@ namespace SpecFlowDiia.POM
         public string SearchTextResponse(string text) =>
            _webDriver.FindElement(_serchTitleText).Text;
 
-        public string ClickPopulalServiceLink()
-        {
-            var popularServiceLinkAhref = _webDriver.FindElement(_popularServiceLinks);
-            _action.MoveToElement(popularServiceLinkAhref).Perform();
-            popularServiceLinkAhref.Click();
-            return popularServiceLinkAhref.Text;
-        }
     }
 }
