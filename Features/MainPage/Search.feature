@@ -7,15 +7,15 @@ Feature: Search
 Background: 
 	Given Main page is open
 
-@Valid
-Scenario: Check the search results with valid input
-#Scenario: Test to get search result output if valid text submited
+@valid
+Scenario: Сheck the search results with valid input
 	When I input 'відкрити ФОП' in the search field
-	When I click submit button 
-	Then I see search result page that contains text 'За вашим запитом знайдено матеріалів'
+	When I click on the search button
+	Then l see a search page with text'За вашим запитом знайдено матеріалів:'
 
-@Invalid
-Scenario: Check the search with no result
-	When I input 'dfdsfdsfdf' in the search field
-	When I click submit button
-	Then I see search result page that contains text 'За вашим запитом не знайдено матеріалів'
+@invalidCheckSearch
+Scenario: Сheck the search with no result
+	When I input 'rgfalerhbfg' in the search field
+	When I click on the search button
+	Then l see a search page with text'За вашим запитом не знайдено матеріалів:'
+

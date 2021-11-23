@@ -90,14 +90,14 @@ namespace SpecFlowDiia.Features.MainPage
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Check the search results with valid input")]
-        [NUnit.Framework.CategoryAttribute("Valid")]
-        public virtual void CheckTheSearchResultsWithValidInput()
+        [NUnit.Framework.DescriptionAttribute("Сheck the search results with valid input")]
+        [NUnit.Framework.CategoryAttribute("valid")]
+        public virtual void СheckTheSearchResultsWithValidInput()
         {
             string[] tagsOfScenario = new string[] {
-                    "Valid"};
+                    "valid"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the search results with valid input", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Сheck the search results with valid input", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -121,30 +121,29 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
-#line 13
+#line 12
  testRunner.When("I input \'відкрити ФОП\' in the search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 14
- testRunner.When("I click submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 13
+ testRunner.When("I click on the search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 15
- testRunner.Then("I see search result page that contains text \'За вашим запитом знайдено матеріалів" +
-                        "\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 14
+ testRunner.Then("l see a search page with text\'За вашим запитом знайдено матеріалів:\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Check the search with no result")]
-        [NUnit.Framework.CategoryAttribute("Invalid")]
-        public virtual void CheckTheSearchWithNoResult()
+        [NUnit.Framework.DescriptionAttribute("Сheck the search with no result")]
+        [NUnit.Framework.CategoryAttribute("invalidCheckSearch")]
+        public virtual void СheckTheSearchWithNoResult()
         {
             string[] tagsOfScenario = new string[] {
-                    "Invalid"};
+                    "invalidCheckSearch"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the search with no result", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 18
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Сheck the search with no result", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 17
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -167,15 +166,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
+#line 18
+ testRunner.When("I input \'rgfalerhbfg\' in the search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
 #line 19
- testRunner.When("I input \'dfdsfdsfdf\' in the search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I click on the search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 20
- testRunner.When("I click submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 21
- testRunner.Then("I see search result page that contains text \'За вашим запитом не знайдено матеріа" +
-                        "лів\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("l see a search page with text\'За вашим запитом не знайдено матеріалів:\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
