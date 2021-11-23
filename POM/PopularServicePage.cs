@@ -24,10 +24,12 @@ namespace SpecFlowDiia.POM
             _webDriver = webDriver;
             _wait = new WebDriverWait(_webDriver, new TimeSpan(0, 0, 15));
             _action = new Actions(_webDriver);
+            //_wait.Until(ExpectedConditions.ElementIsClickable())
         }
         
         //PopularServiceLinks
-        private readonly By _popularServiceLinks = By.XPath("(//ul[@class=\"nav nav - tabs tabs_services\"]/../div/div[1]//div[@class=\"swiper - wrapper swiper_services - wrapper\"]/div/div/div/a[@class=\"swiper_services - slide - title\"])[position() = 1]");
+        
+        private readonly By _popularServiceLinks = By.XPath("(//*[@id='gromadyanam']/div[1]/div/div[2]/div[1]/div[1]/div/a");
         private readonly By _clickRightButton = By.CssSelector("[class='swiper_services-btn-next swiper-btn-next']");
         private readonly By _clikLeftButton = By.CssSelector("[class='swiper_services-btn-prev swiper-btn-prev']");
         private readonly By _turnOneRight = By.XPath("//*[@id='gromadyanam']/div[1]/div/div[2]/div[5]/div[1]/div/a");
@@ -39,11 +41,7 @@ namespace SpecFlowDiia.POM
         //ul[@class="nav nav-tabs tabs_services"]/../div/div/div/div/div[@class="swiper-wrapper swiper_services-wrapper"]
         private readonly By _popularServiceHeader = By.XPath("/html/body/div[1]/main/section[1]/div[1]/div/div[3]/div[1]");
 
-        //public PopularServicePage GoMainPage()
-        //{
-        //    _webDriver.Navigate().GoToUrl("https://diia.gov.ua/");
-        //    return this;
-        //}
+        
         public bool CheckTextOfFirstPopularLink(string textOfPopularService)
         {
             if (_webDriver.FindElement(_popularServiceHeader).Text.Contains(textOfPopularService))
@@ -110,16 +108,20 @@ namespace SpecFlowDiia.POM
             return this;
         }
 
-        public void TurnRight()
+        public bool TurnRight()
         {
-            _webDriver
-                .FindElement(_turnOneRight);
+           return _webDriver
+                .FindElement(_turnOneRight)
+                .GetAttribute("class")
+                .Contains("active");
         }
 
-        public void TurnLeft()
+        public bool TurnLeft()
         {
-            _webDriver
-                .FindElement(_turnOneLeft);
+            return _webDriver
+                .FindElement(_turnOneLeft)
+                .GetAttribute("id")
+                .Contains("active"); 
         }
     }
 }

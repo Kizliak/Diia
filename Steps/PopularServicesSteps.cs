@@ -22,8 +22,8 @@ namespace SpecFlowDiia.Steps
             _scenarioContext = scenarioContext;
             _webDriver = _scenarioContext.Get<IWebDriver>("WebDriver");
             _popularServicePage = new PopularServicePage(_webDriver);
+            _mainPage = new MainPage(_webDriver);
         }
-
 
         [When(@"I click on the first service")]
         public void WhenIClickOnTheFirstService()

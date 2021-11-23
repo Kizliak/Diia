@@ -57,6 +57,7 @@ namespace SpecFlowDiia.POM
                 .Click();
             return this;
         }
+
         public string SearchTextResponse(string text) =>
            _webDriver.FindElement(_serchTitleText).Text;
 

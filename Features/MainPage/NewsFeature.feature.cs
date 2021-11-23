@@ -85,11 +85,11 @@ namespace SpecFlowDiia.Features.MainPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check the more news button")]
-        [NUnit.Framework.CategoryAttribute("NewsPage")]
+        [NUnit.Framework.CategoryAttribute("newsPage")]
         public virtual void CheckTheMoreNewsButton()
         {
             string[] tagsOfScenario = new string[] {
-                    "NewsPage"};
+                    "newsPage"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the more news button", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 10
@@ -130,11 +130,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check the news title link move to page about this news info")]
-        [NUnit.Framework.CategoryAttribute("NewsPage")]
+        [NUnit.Framework.CategoryAttribute("newsPage")]
         public virtual void CheckTheNewsTitleLinkMoveToPageAboutThisNewsInfo()
         {
             string[] tagsOfScenario = new string[] {
-                    "NewsPage"};
+                    "newsPage"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the news title link move to page about this news info", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 16
@@ -172,11 +172,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check the news page number navigation")]
-        [NUnit.Framework.CategoryAttribute("NewsPage")]
+        [NUnit.Framework.CategoryAttribute("newsPage")]
         public virtual void CheckTheNewsPageNumberNavigation()
         {
             string[] tagsOfScenario = new string[] {
-                    "NewsPage"};
+                    "newsPage"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the news page number navigation", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 21
@@ -203,15 +203,12 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 22
-    testRunner.When("I scroll to page number navigation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 23
  testRunner.When("I click on the second page number", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 24
+#line 23
  testRunner.Then("I see first block text on the second page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 25
+#line 24
  testRunner.Then("I see switch second selector navigation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -220,14 +217,14 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check navigation to the previous page by click on the \'Previous page\' button")]
-        [NUnit.Framework.CategoryAttribute("NewsPage")]
+        [NUnit.Framework.CategoryAttribute("newsPage")]
         public virtual void CheckNavigationToThePreviousPageByClickOnThePreviousPageButton()
         {
             string[] tagsOfScenario = new string[] {
-                    "NewsPage"};
+                    "newsPage"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check navigation to the previous page by click on the \'Previous page\' button", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 28
+#line 27
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -250,16 +247,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line hidden
-#line 29
+#line 28
     testRunner.When("I click the next page button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 30
+#line 29
  testRunner.Then("I go to the next page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 31
+#line 30
  testRunner.When("I click the previous page button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 32
+#line 31
  testRunner.Then("I go to the previous page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

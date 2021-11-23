@@ -85,11 +85,11 @@ namespace SpecFlowDiia.Features.MainPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check navigation to service page from the block of popular services")]
-        [NUnit.Framework.CategoryAttribute("Click")]
+        [NUnit.Framework.CategoryAttribute("click")]
         public virtual void CheckNavigationToServicePageFromTheBlockOfPopularServices()
         {
             string[] tagsOfScenario = new string[] {
-                    "Click"};
+                    "click"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check navigation to service page from the block of popular services", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 10
@@ -128,12 +128,12 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check the swipe right the popular services by swiper-right button")]
         [NUnit.Framework.CategoryAttribute("swiper")]
-        [NUnit.Framework.CategoryAttribute("Popularservice")]
+        [NUnit.Framework.CategoryAttribute("popularService")]
         public virtual void CheckTheSwipeRightThePopularServicesBySwiper_RightButton()
         {
             string[] tagsOfScenario = new string[] {
                     "swiper",
-                    "Popularservice"};
+                    "popularService"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the swipe right the popular services by swiper-right button", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 16
@@ -172,12 +172,12 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check the swipe left the popular services by swiper-left button")]
         [NUnit.Framework.CategoryAttribute("swiper")]
-        [NUnit.Framework.CategoryAttribute("Popularservice")]
+        [NUnit.Framework.CategoryAttribute("popularService")]
         public virtual void CheckTheSwipeLeftThePopularServicesBySwiper_LeftButton()
         {
             string[] tagsOfScenario = new string[] {
                     "swiper",
-                    "Popularservice"};
+                    "popularService"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the swipe left the popular services by swiper-left button", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 21
@@ -222,12 +222,12 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check the swipe to the left of popular services by left-bullet pagination")]
         [NUnit.Framework.CategoryAttribute("swiper")]
-        [NUnit.Framework.CategoryAttribute("Popularservice")]
+        [NUnit.Framework.CategoryAttribute("popularService")]
         public virtual void CheckTheSwipeToTheLeftOfPopularServicesByLeft_BulletPagination()
         {
             string[] tagsOfScenario = new string[] {
                     "swiper",
-                    "Popularservice"};
+                    "popularService"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the swipe to the left of popular services by left-bullet pagination", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 28
@@ -272,12 +272,12 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check the swipe to the right of popular services by right-bullet pagination")]
         [NUnit.Framework.CategoryAttribute("swiper")]
-        [NUnit.Framework.CategoryAttribute("Popularservice")]
+        [NUnit.Framework.CategoryAttribute("popularService")]
         public virtual void CheckTheSwipeToTheRightOfPopularServicesByRight_BulletPagination()
         {
             string[] tagsOfScenario = new string[] {
                     "swiper",
-                    "Popularservice"};
+                    "popularService"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check the swipe to the right of popular services by right-bullet pagination", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 35

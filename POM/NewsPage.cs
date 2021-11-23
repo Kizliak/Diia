@@ -26,8 +26,7 @@ namespace SpecFlowDiia.POM
         private readonly By _clickMoreNewsButton = By.CssSelector("[class='btn btn_more-news']");
         private readonly By _firstBlockNews = By.CssSelector("[class='posts_item-title']");
         private readonly By _pageTitleText = By.CssSelector("[class='page_title-text']");
-        private readonly By _navigation = By.XPath(".//*[@id='post-navigation']/ul/li[3]/span");
-        private readonly By _paginationNum2 = By.CssSelector("[href='https://diia.gov.ua/news?page=2']");
+        private readonly By _paginationNum2 = By.CssSelector(".//*[@id='post-navigation']/ul/li[2]/span");
         private readonly By _countNewsBlock = By.CssSelector("[class='posts_item']");
         private readonly By _firstNewsBlockTitle = By.CssSelector("[class='posts_item-title']");
         private readonly By _activePaginationElement = By.XPath("//*//*[@id='post-navigation']/ul/li[3]/span");
@@ -64,13 +63,6 @@ namespace SpecFlowDiia.POM
             return this;
         }
 
-        public string Pagination()
-        {
-            var pagination = _webDriver.FindElement(_navigation);
-            _action.MoveToElement(pagination).Perform();
-            pagination.Click();
-            return pagination.Text;
-        }
         public NewsPage PaginationNum2()
         {
             _webDriver
@@ -79,7 +71,7 @@ namespace SpecFlowDiia.POM
             return this;
         }
 
-        public bool CountNewsBlock()
+        public bool CountNewsBlock(int count)
         {
             if (_webDriver.FindElements(_countNewsBlock).Count() == 12)
             {

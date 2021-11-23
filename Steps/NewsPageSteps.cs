@@ -37,12 +37,7 @@ namespace SpecFlowDiia.Steps
         {
             _newsPage.СlickOnFirstBlockNews();
         }
-        
-        [When(@"I scroll to page number navigation")]
-        public void WhenIScrollToPageNumberNavigation()
-        {
-            _newsPage.Pagination();
-        }
+     
         
         [When(@"I click on the second page number")]
         public void WhenIClickOnTheSecondPageNumber()
@@ -59,13 +54,13 @@ namespace SpecFlowDiia.Steps
         [When(@"I click the previous page button")]
         public void WhenIClickThePreviousPageButton()
         {
-            _newsPage.PreviousPageButtonClik();
+            _newsPage.ActiveNavElementPriviousPage();
         }
         
         [Then(@"Сount with news blocks in the page is (.*)")]
-        public void ThenСountWithNewsBlocksInThePageIs()
+        public void ThenСountWithNewsBlocksInThePageIs(int count)
         {
-            Assert.IsTrue(_newsPage.CountNewsBlock());
+            _newsPage.CountNewsBlock(count);
         }
         
         [Then(@"I see second page number navigation")]

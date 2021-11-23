@@ -91,11 +91,11 @@ namespace SpecFlowDiia.Features.MainPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Сheck the search results with valid input")]
-        [NUnit.Framework.CategoryAttribute("Valid")]
+        [NUnit.Framework.CategoryAttribute("valid")]
         public virtual void СheckTheSearchResultsWithValidInput()
         {
             string[] tagsOfScenario = new string[] {
-                    "Valid"};
+                    "valid"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Сheck the search results with valid input", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 11
@@ -136,11 +136,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Сheck the search with no result")]
-        [NUnit.Framework.CategoryAttribute("InvalidCheckSearch")]
+        [NUnit.Framework.CategoryAttribute("invalidCheckSearch")]
         public virtual void СheckTheSearchWithNoResult()
         {
             string[] tagsOfScenario = new string[] {
-                    "InvalidCheckSearch"};
+                    "invalidCheckSearch"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Сheck the search with no result", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 17

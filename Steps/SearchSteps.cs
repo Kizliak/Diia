@@ -42,6 +42,7 @@ namespace SpecFlowDiia.Steps
         [Then(@"l see a search page with text'(.*)'")]
         public void ThenLSeeASearchPageWithText(string text)
         {
+            //Assert.AreEqual(text, _mainPage.SearchTextResponse(text));
             _mainPage.SearchTextResponse(text);
         }
 

@@ -7,14 +7,15 @@ Feature: Search
 Background: 
 	Given Main page is open
 
-@Valid
+@valid
 Scenario: Сheck the search results with valid input
 	When I input 'відкрити ФОП' in the search field
 	When I click on the search button
 	Then l see a search page with text'За вашим запитом знайдено матеріалів:'
 
-@InvalidCheckSearch
+@invalidCheckSearch
 Scenario: Сheck the search with no result
 	When I input 'rgfalerhbfg' in the search field
 	When I click on the search button
 	Then l see a search page with text'За вашим запитом не знайдено матеріалів:'
+
