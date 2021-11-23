@@ -1,5 +1,4 @@
-﻿using System;
-using TechTalk.SpecFlow;
+﻿using TechTalk.SpecFlow;
 using OpenQA.Selenium;
 using NUnit.Framework;
 using SpecFlowDiia.POM;
@@ -13,22 +12,18 @@ namespace SpecFlowDiia.Steps
     {
         private readonly IWebDriver _webDriver;
         private readonly ScenarioContext _scenarioContext;
-        private readonly MainPage _mainPage;
         private readonly PopularServicePage _popularServicePage;
-        //private string popularLinkText = "";
 
         public PopularServicesSteps(ScenarioContext scenarioContext)
         {
             _scenarioContext = scenarioContext;
             _webDriver = _scenarioContext.Get<IWebDriver>("WebDriver");
             _popularServicePage = new PopularServicePage(_webDriver);
-            _mainPage = new MainPage(_webDriver);
         }
 
         [When(@"I click on the first service")]
         public void WhenIClickOnTheFirstService()
         {
-            //popularLinkText = _mainPage.ClickPopulalServiceLink();
             _scenarioContext["popularLinkText"] = _popularServicePage.ClickPopulalServiceLink();
         }
 

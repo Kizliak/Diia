@@ -1,7 +1,5 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using SpecFlowDiia.POM;
-using System;
 using TechTalk.SpecFlow;
 
 namespace SpecFlowDiia.Steps
@@ -36,8 +34,7 @@ namespace SpecFlowDiia.Steps
         public void WhenIClickOnTheTitleInFirstNewsBlock()
         {
             _newsPage.СlickOnFirstBlockNews();
-        }
-     
+        }    
         
         [When(@"I click on the second page number")]
         public void WhenIClickOnTheSecondPageNumber()

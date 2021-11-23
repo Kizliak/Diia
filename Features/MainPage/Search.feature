@@ -18,4 +18,3 @@ Scenario: Сheck the search with no result
 	When I input 'rgfalerhbfg' in the search field
 	When I click on the search button
 	Then l see a search page with text'За вашим запитом не знайдено матеріалів:'
-

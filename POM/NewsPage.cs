@@ -2,10 +2,7 @@
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SpecFlowDiia.POM
 {
@@ -26,15 +23,14 @@ namespace SpecFlowDiia.POM
         private readonly By _clickMoreNewsButton = By.CssSelector("[class='btn btn_more-news']");
         private readonly By _firstBlockNews = By.CssSelector("[class='posts_item-title']");
         private readonly By _pageTitleText = By.CssSelector("[class='page_title-text']");
-        private readonly By _paginationNum2 = By.CssSelector(".//*[@id='post-navigation']/ul/li[2]/span");
+        private readonly By _paginationNum2 = By.XPath("//*[@class=\"pagination\"]/li[3]/a");
         private readonly By _countNewsBlock = By.CssSelector("[class='posts_item']");
         private readonly By _firstNewsBlockTitle = By.CssSelector("[class='posts_item-title']");
-        private readonly By _activePaginationElement = By.XPath("//*//*[@id='post-navigation']/ul/li[3]/span");
+        private readonly By _activePaginationElement = By.XPath("//*[@id='post-navigation']/ul/li[3]/span");
         private readonly By _clikNextPageButton = By.CssSelector("[id='post-navigation'] [rel='next']");
         private readonly By _clikPreviousPageButton = By.XPath("//*[@id='post-navigation']/ul/li[1]/a");
         private readonly By _paginationNextButton = By.XPath(".//*[@id='post-navigation']/ul/li[3]/span");
-        private readonly By _paginationPreviousButton = By.XPath("//*[@id='post-navigation']/ul/li[2]/a");
-        
+        private readonly By _paginationPreviousButton = By.XPath("//*[@id='post-navigation']/ul/li[2]/a");       
 
         public NewsPage GoToNewsPage()
         {
@@ -87,6 +83,7 @@ namespace SpecFlowDiia.POM
             activeElement.Click();
             return activeElement.Text;
         }
+
         public NewsPage NextPageButtonClick()
         {
             _webDriver
@@ -111,6 +108,7 @@ namespace SpecFlowDiia.POM
             _webDriver
                 .FindElement(_firstNewsBlockTitle);
         }
+
         public void SecondPageNumberNavigation()
         {
             _webDriver
@@ -122,6 +120,7 @@ namespace SpecFlowDiia.POM
             _webDriver
                 .FindElement(_pageTitleText);
         }
+
         public void ActiveNavElementNextPage()
         {
             _webDriver

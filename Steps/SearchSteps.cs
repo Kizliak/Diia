@@ -1,8 +1,5 @@
 ﻿using OpenQA.Selenium;
-using System;
 using TechTalk.SpecFlow;
-using NUnit.Framework;
-using SpecFlowDiia.Features.MainPage;
 using SpecFlowDiia.POM;
 
 namespace SpecFlowDiia.Steps

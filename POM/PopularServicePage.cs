@@ -1,15 +1,7 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using TechTalk.SpecFlow;
-using WebDriverManager;
-using WebDriverManager.DriverConfigs.Impl;
-using WebDriverManager.Helpers;
 
 namespace SpecFlowDiia.POM
 {
@@ -24,12 +16,9 @@ namespace SpecFlowDiia.POM
             _webDriver = webDriver;
             _wait = new WebDriverWait(_webDriver, new TimeSpan(0, 0, 15));
             _action = new Actions(_webDriver);
-            //_wait.Until(ExpectedConditions.ElementIsClickable())
-        }
+        }       
         
-        //PopularServiceLinks
-        
-        private readonly By _popularServiceLinks = By.XPath("(//*[@id='gromadyanam']/div[1]/div/div[2]/div[1]/div[1]/div/a");
+        private readonly By _popularServiceLinks = By.XPath("//*[@id='gromadyanam']/div[1]/div/div[2]/div[1]/div[1]/div/a");
         private readonly By _clickRightButton = By.CssSelector("[class='swiper_services-btn-next swiper-btn-next']");
         private readonly By _clikLeftButton = By.CssSelector("[class='swiper_services-btn-prev swiper-btn-prev']");
         private readonly By _turnOneRight = By.XPath("//*[@id='gromadyanam']/div[1]/div/div[2]/div[5]/div[1]/div/a");
@@ -37,11 +26,8 @@ namespace SpecFlowDiia.POM
         private readonly By _cookieClose = By.CssSelector("[class='cookies-1_close']");
         private readonly By _swipeLeft = By.XPath("//*[@id='gromadyanam']/div[1]/div/div[3]/span[1]");
         private readonly By _swipeRight = By.XPath("//*[@id='gromadyanam']/div[1]/div/div[3]/span[2]");
-        //div[@class="swiper_services-top"]/../div[2]/div/div/div/a[@class="swiper_services-slide-title"]
-        //ul[@class="nav nav-tabs tabs_services"]/../div/div/div/div/div[@class="swiper-wrapper swiper_services-wrapper"]
         private readonly By _popularServiceHeader = By.XPath("/html/body/div[1]/main/section[1]/div[1]/div/div[3]/div[1]");
-
-        
+      
         public bool CheckTextOfFirstPopularLink(string textOfPopularService)
         {
             if (_webDriver.FindElement(_popularServiceHeader).Text.Contains(textOfPopularService))
@@ -50,12 +36,14 @@ namespace SpecFlowDiia.POM
             }
             return false;
         }
+
         public string ClickPopulalServiceLink()
         {
             var popularServiceLinkAhref = _webDriver.FindElement(_popularServiceLinks);
+            string linkText = popularServiceLinkAhref.Text;
             _action.MoveToElement(popularServiceLinkAhref).Perform();
             popularServiceLinkAhref.Click();
-            return popularServiceLinkAhref.Text;
+            return linkText;
         }
 
         public PopularServicePage SwipeRightClick()
