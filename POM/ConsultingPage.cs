@@ -25,7 +25,11 @@ namespace SpecFlowDiia.POM
         private readonly By _accordionBlock = By.CssSelector("h2[class=\"title faq-list-static__title h2\"]");
         private readonly By _tagsBlock = By.CssSelector("div[class=\"consulting-list__categories\"]");
         private readonly By _orderConsultationButton = By.XPath("//div[@class=\"consulting-list__card\"][1]//button[@class=\"button button_type_main\"]");
+        private readonly By _orderConsultationButton12 = By.XPath("//div[@class=\"consulting-list__card\"][12]//button[@class=\"button button_type_main\"]");
+        private readonly By _orderConsultationButtonDiv = By.XPath("//button[@class=\"button button_type_secondary-black\"]/..");
         private readonly By _authorizePopup = By.CssSelector("div[class=\"modal-first-consultation__content\"]");
+        private readonly By _showMoreButton = By.CssSelector("button[class=\"button button_type_secondary-black\"]");
+        private readonly By _consultationBlock = By.XPath("//div[@class=\"consulting-list__card\"]");
 
         public ConsultingPage GoToUrl()
         {
@@ -79,7 +83,6 @@ namespace SpecFlowDiia.POM
         {
             var accordionBlock = _webDriver.FindElement(_accordionBlock);
             _action.MoveToElement(accordionBlock).Perform();
-
             _action.MoveToElement(_webDriver.FindElement(_orderConsultationButton)).Perform();
             return this;
         }
@@ -95,6 +98,27 @@ namespace SpecFlowDiia.POM
         {
             _wait.Until(ExpectedConditions.ElementIsVisible(_authorizePopup));
             return true;
+        }
+
+        public ConsultingPage ScrollToMoreButton()
+        {
+            MoveToAccordionBlock();
+            _wait.Until(ExpectedConditions.ElementExists(_showMoreButton));
+            _action.MoveToElement(_webDriver.FindElement(_orderConsultationButtonDiv)).Perform();
+            return this;
+        }
+
+        public ConsultingPage ClickMoreButton()
+        {
+            var button = _wait.Until(ExpectedConditions.ElementIsVisible(_showMoreButton));
+            button.Click();
+            return this;
+        }
+
+        public int CountConsultationElementsOnPage()
+        {
+            _wait.Until(ExpectedConditions.ElementExists(_orderConsultationButton12));
+            return _webDriver.FindElements(_consultationBlock).Count();
         }
     }
 }

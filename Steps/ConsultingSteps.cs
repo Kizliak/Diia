@@ -1,5 +1,4 @@
-﻿using System;
-using TechTalk.SpecFlow;
+﻿using TechTalk.SpecFlow;
 using OpenQA.Selenium;
 using NUnit.Framework;
 using SpecFlowDiia.POM;
@@ -65,5 +64,17 @@ namespace SpecFlowDiia.Steps
             Assert.IsTrue(_consultingPage.CheckIfAuthorizePopupIsVisible());
         }
 
+        [When(@"I click Show more button")]
+        public void WhenIClickShowMoreButton()
+        {
+            _consultingPage.ScrollToMoreButton()
+                .ClickMoreButton();
+        }
+
+        [Then(@"I see (.*) consultation blocks on page")]
+        public void ThenISeeConsultationBlocksOnPage(int p0)
+        {
+            Assert.AreEqual(12,_consultingPage.CountConsultationElementsOnPage());
+        }
     }
 }
